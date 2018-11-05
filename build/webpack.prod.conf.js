@@ -33,7 +33,7 @@ module.exports = merge(baseConfig, {
         }),
         //抽取 CSS 到单文件
         new MiniCssExtractPlugin({
-            filename: "[name].css",
+            filename: "./css/[name].css",
             chunkFilename: "[id].css"
         })
     ]

@@ -9,9 +9,11 @@ const webpack = require('webpack');
 
 
 module.exports = {
+    //入口
     entry: {
         bundle: path.resolve(__dirname, '../src/index.js')
     },
+    //输出
     output: {
         path: path.resolve(__dirname, '../dist'),
         filename: '[name].[hash].js'
@@ -46,17 +48,6 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader'
             },
-            {
-                test: /\.css$/,
-                use: ['vue-style-loader', 'css-loader', 'postcss-loader']
-            },
-            //stylus 预处理器
-            {
-                test: /\.styl(us)$/,
-                use: ['vue-style-loader', 'css-loader', 'stylus-loader', 'postcss-loader']
-              }
-              
-              
         ]
     },
     plugins: [
@@ -70,7 +61,7 @@ module.exports = {
             //filename 是打包后文件的名称
             filename: '[name]_[hash].js',
             //path 是打包后的路径
-            path: './dll',
+            path: './js',
             //entry 是入口
             entry: {
               //vendor 是你指定的名称 数组内容就是要打包的第三方库的名称，不要写全路径，Webpack 会自动去 node_modules 中找到的
